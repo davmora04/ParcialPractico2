@@ -1,18 +1,25 @@
-  <br>
-  <div class="container contenedor-animes">
+<div class="container mt-4">
   <div class="row">
-    <p>La cantidad total de episodios es 2326 y el rating promedio es 8.03</p>
-    <div *ngIf="selected">
-      <app-anime-detail [animeDetail]="selectedBAnime"></app-anime-detail>
-      <hr>
+    <div class="col-12 text-center mb-4">
+      <h5>La cantidad total de episodios es {{ totalEpisodes }} y el rating promedio es {{ averageRating.toFixed(2) }}</h5>
     </div>
-    <div class="col-4" *ngFor="let anime of animes">
-        <p>{{anime.name}}</p>
-        <img src={{anime.img}}  alt="anime image" width=50px>
-        <p>⭐{{anime.Rating}} <b>Categories: </b>{{anime.categorie}}</p>
-        <a href="#" (click)="onSelected(anime)">More information</a>
-        <hr>
-   </div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let anime of animes">
+      <div class="card h-100">
+        <img [src]="anime.img" class="card-img-top" alt="{{ anime.name }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ anime.name }}</h5>
+          <p class="card-text">
+            ⭐ {{ anime.Rating }} <br>
+            <b>Categories:</b> {{ anime.categorie }}
+          </p>
+          <div class="mt-auto">
+            <a [routerLink]="['/anime', anime.id]" class="btn btn-primary w-100">More Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

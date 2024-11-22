@@ -1,1 +1,22 @@
-
+.card {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .card-img-top {
+    height: 300px;
+    object-fit: cover; 
+  }
+  
+  .contenedor-animes {
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
